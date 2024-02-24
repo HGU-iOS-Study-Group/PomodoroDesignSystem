@@ -32,9 +32,10 @@ public final class PomodoroConfirmButton: UIView {
         self.init(frame: .zero)
         self.isUserInteractionEnabled = true
         self.addSubview(button)
-        button.titleLabel?.text = title
+        button.setTitle(title, for: .normal)
+        button.setTitle(title, for: .disabled)
         button.setTitleColor(.pomodoro.surface, for: .normal)
-        button.setTitleColor(.pomodoro.surface, for: .normal)
+        button.setTitleColor(.pomodoro.surface, for: .disabled)
         button.backgroundColor = .pomodoro.blackHigh
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.layer.cornerRadius = 49.68
