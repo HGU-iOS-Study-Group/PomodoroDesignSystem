@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PomodoroConfirmButton: UIView {
+public final class PomodoroConfirmButton: UIView {
     private let button = UIButton()
     private var didTapHandler: (() -> Void)?
 
@@ -19,13 +19,13 @@ final class PomodoroConfirmButton: UIView {
         super.init(coder: coder)
     }
 
-    var isEnabled: Bool = true {
+    public var isEnabled: Bool = true {
         didSet {
             button.backgroundColor = isEnabled ? .pomodoro.blackHigh : .pomodoro.surface
         }
     }
 
-    convenience init(
+    public convenience init(
         title: String,
         didTapHandler: @escaping () -> Void
     ) {
@@ -41,7 +41,7 @@ final class PomodoroConfirmButton: UIView {
     }
 
     @objc
-    func didTapButton() {
+    private func didTapButton() {
         didTapHandler?()
     }
 }
