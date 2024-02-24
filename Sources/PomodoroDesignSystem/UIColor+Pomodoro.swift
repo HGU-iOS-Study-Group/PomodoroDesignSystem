@@ -9,6 +9,8 @@ public extension UIColor {
 
     final class Pomodoro: NSObject {
         override init() { super.init() }
+        
+        public let background = UIColor(colorNamed: "background")!
 
         // Primary
         public let primary50 = UIColor(colorNamed: "primary50")!
