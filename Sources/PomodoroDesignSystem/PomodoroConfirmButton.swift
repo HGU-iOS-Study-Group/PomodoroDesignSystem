@@ -31,6 +31,7 @@ public final class PomodoroConfirmButton: UIView {
     ) {
         self.init(frame: .zero)
         self.isUserInteractionEnabled = true
+        self.addSubview(button)
         button.titleLabel?.text = title
         button.setTitleColor(.pomodoro.surface, for: .normal)
         button.setTitleColor(.pomodoro.surface, for: .normal)
