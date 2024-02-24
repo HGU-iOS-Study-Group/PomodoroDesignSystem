@@ -24,6 +24,11 @@ public final class PomodoroConfirmButton: UIView {
             button.backgroundColor = isEnabled ? .pomodoro.blackHigh : .pomodoro.surface
         }
     }
+    
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        button.layer.cornerRadius = button.frame.height / 2
+    }
 
     public convenience init(
         title: String,
@@ -37,8 +42,15 @@ public final class PomodoroConfirmButton: UIView {
         button.setTitleColor(.pomodoro.surface, for: .normal)
         button.setTitleColor(.pomodoro.surface, for: .disabled)
         button.backgroundColor = .pomodoro.blackHigh
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: self.topAnchor),
+            button.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+        ])
+        
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        button.layer.cornerRadius = 49.68
         self.didTapHandler = didTapHandler
     }
 
