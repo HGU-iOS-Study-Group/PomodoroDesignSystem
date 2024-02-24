@@ -2,7 +2,7 @@ import UIKit
 
 public extension UIColor {
     private convenience init?(colorNamed: String) {
-        self.init(named: colorNamed, in: ResourceBundle.loadBundle(), compatibleWith: nil)
+        self.init(named: colorNamed, in: .module, compatibleWith: nil)
     }
 
     static let pomodoro = Pomodoro()
