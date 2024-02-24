@@ -21,6 +21,7 @@ public final class PomodoroConfirmButton: UIView {
 
     public var isEnabled: Bool = true {
         didSet {
+            button.isEnabled = isEnabled
             button.backgroundColor = isEnabled ? .pomodoro.blackHigh : .pomodoro.blackHigh.withAlphaComponent(0.2)
         }
     }
