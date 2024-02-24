@@ -11,7 +11,7 @@ public extension UIColor {
         override init() { super.init() }
 
         // Primary
-        let primary50 = UIColor(colorNamed: "primary50")!
+        public let primary50 = UIColor(colorNamed: "primary50")!
         let primary100 = UIColor(colorNamed: "primary100")!
         let primary200 = UIColor(colorNamed: "primary200")!
         let primary300 = UIColor(colorNamed: "primary300")!
