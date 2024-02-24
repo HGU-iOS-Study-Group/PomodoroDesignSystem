@@ -12,39 +12,39 @@ public extension UIColor {
 
         // Primary
         public let primary50 = UIColor(colorNamed: "primary50")!
-        let primary100 = UIColor(colorNamed: "primary100")!
-        let primary200 = UIColor(colorNamed: "primary200")!
-        let primary300 = UIColor(colorNamed: "primary300")!
-        let primary400 = UIColor(colorNamed: "primary400")!
-        let primary500 = UIColor(colorNamed: "primary500")!
-        let primary600 = UIColor(colorNamed: "primary600")!
-        let primary700 = UIColor(colorNamed: "primary700")!
-        let primary800 = UIColor(colorNamed: "primary800")!
-        let primary900 = UIColor(colorNamed: "primary900")!
+        public let primary100 = UIColor(colorNamed: "primary100")!
+        public let primary200 = UIColor(colorNamed: "primary200")!
+        public let primary300 = UIColor(colorNamed: "primary300")!
+        public let primary400 = UIColor(colorNamed: "primary400")!
+        public let primary500 = UIColor(colorNamed: "primary500")!
+        public let primary600 = UIColor(colorNamed: "primary600")!
+        public let primary700 = UIColor(colorNamed: "primary700")!
+        public let primary800 = UIColor(colorNamed: "primary800")!
+        public let primary900 = UIColor(colorNamed: "primary900")!
 
         // Surface
-        let blackHigh = UIColor(colorNamed: "blackHigh")!
-        let blackMedium = UIColor(colorNamed: "blackMedium")!
-        let disabled = UIColor(colorNamed: "disabled")!
-        let disabled2 = UIColor(colorNamed: "disabled2")!
-        let searchBackground = UIColor(colorNamed: "searchBackground")!
-        let surface = UIColor(colorNamed: "surface")!
+        public let blackHigh = UIColor(colorNamed: "blackHigh")!
+        public let blackMedium = UIColor(colorNamed: "blackMedium")!
+        public let disabled = UIColor(colorNamed: "disabled")!
+        public let disabled2 = UIColor(colorNamed: "disabled2")!
+        public let searchBackground = UIColor(colorNamed: "searchBackground")!
+        public let surface = UIColor(colorNamed: "surface")!
 
         // Tag
-        let tagBackground1 = UIColor(colorNamed: "tagBackground1")!
-        let tagBackground2 = UIColor(colorNamed: "tagBackground2")!
-        let tagBackground3 = UIColor(colorNamed: "tagBackground3")!
-        let tagBackground4 = UIColor(colorNamed: "tagBackground4")!
-        let tagBackground5 = UIColor(colorNamed: "tagBackground5")!
-        let tagBackground6 = UIColor(colorNamed: "tagBackground6")!
-        let tagBackground7 = UIColor(colorNamed: "tagBackground7")!
+        public let tagBackground1 = UIColor(colorNamed: "tagBackground1")!
+        public let tagBackground2 = UIColor(colorNamed: "tagBackground2")!
+        public let tagBackground3 = UIColor(colorNamed: "tagBackground3")!
+        public let tagBackground4 = UIColor(colorNamed: "tagBackground4")!
+        public let tagBackground5 = UIColor(colorNamed: "tagBackground5")!
+        public let tagBackground6 = UIColor(colorNamed: "tagBackground6")!
+        public let tagBackground7 = UIColor(colorNamed: "tagBackground7")!
 
-        let tagTypo1 = UIColor(colorNamed: "tagTypo1")!
-        let tagTypo2 = UIColor(colorNamed: "tagTypo2")!
-        let tagTypo3 = UIColor(colorNamed: "tagTypo3")!
-        let tagTypo4 = UIColor(colorNamed: "tagTypo4")!
-        let tagTypo5 = UIColor(colorNamed: "tagTypo5")!
-        let tagTypo6 = UIColor(colorNamed: "tagTypo6")!
-        let tagTypo7 = UIColor(colorNamed: "tagTypo7")!
+        public let tagTypo1 = UIColor(colorNamed: "tagTypo1")!
+        public let tagTypo2 = UIColor(colorNamed: "tagTypo2")!
+        public let tagTypo3 = UIColor(colorNamed: "tagTypo3")!
+        public let tagTypo4 = UIColor(colorNamed: "tagTypo4")!
+        public let tagTypo5 = UIColor(colorNamed: "tagTypo5")!
+        public let tagTypo6 = UIColor(colorNamed: "tagTypo6")!
+        public let tagTypo7 = UIColor(colorNamed: "tagTypo7")!
     }
 }
