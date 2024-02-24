@@ -21,7 +21,7 @@ public final class PomodoroConfirmButton: UIView {
 
     public var isEnabled: Bool = true {
         didSet {
-            button.backgroundColor = isEnabled ? .pomodoro.blackHigh : .pomodoro.surface
+            button.backgroundColor = isEnabled ? .pomodoro.blackHigh : .pomodoro.blackHigh.withAlphaComponent(0.2)
         }
     }
     
@@ -40,7 +40,7 @@ public final class PomodoroConfirmButton: UIView {
         button.setTitle(title, for: .normal)
         button.setTitle(title, for: .disabled)
         button.setTitleColor(.pomodoro.surface, for: .normal)
-        button.setTitleColor(.pomodoro.surface, for: .disabled)
+        button.setTitleColor(.pomodoro.surface.withAlphaComponent(0.2), for: .disabled)
         button.backgroundColor = .pomodoro.blackHigh
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
