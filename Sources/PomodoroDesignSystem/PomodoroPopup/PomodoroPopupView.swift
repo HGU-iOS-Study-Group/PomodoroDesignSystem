@@ -19,6 +19,7 @@ public enum PomodoroPopupButtonType {
         cancelButtonAction: (() -> Void)?,
         confirmButtonAction: (() -> Void)?
     )
+    case noButton
 }
 
 final class PomodoroPopupView: UIStackView {
@@ -65,6 +66,8 @@ final class PomodoroPopupView: UIStackView {
             confirmButton.setTitle(confirmButtonTitle, for: .normal)
             self.cancelButtonAction = cancelButtonAction
             self.confirmButtonAction = confirmButtonAction
+        case .noButton:
+            buttonsStackView.removeFromSuperview()
         case nil:
             buttonsStackView.removeFromSuperview()
         }
