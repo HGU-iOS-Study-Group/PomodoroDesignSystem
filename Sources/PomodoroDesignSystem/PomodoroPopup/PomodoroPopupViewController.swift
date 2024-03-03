@@ -22,8 +22,8 @@ final class PomodoroPopupViewController: UIViewController {
         button: PomodoroPopupButtonType?
     ) {
         popupView.updateComponents(
-            title: title,
-            body: body,
+            title: title ?? "",
+            body: body ?? "",
             button: button,
             dismissAction: { [weak self] in
                 self?.dismiss(animated: true)

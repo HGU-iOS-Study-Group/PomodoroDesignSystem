@@ -43,8 +43,8 @@ final class PomodoroPopupView: UIStackView {
     }
 
     func updateComponents(
-        title: String?,
-        body: String?,
+        title: String,
+        body: String,
         button: PomodoroPopupButtonType?,
         dismissAction: (() -> Void)?
     ) {
@@ -70,6 +70,14 @@ final class PomodoroPopupView: UIStackView {
             buttonsStackView.removeFromSuperview()
         case nil:
             buttonsStackView.removeFromSuperview()
+        }
+
+        if title.isEmpty {
+            titleLabel.removeFromSuperview()
+        }
+
+        if body.isEmpty {
+            bodyLabel.removeFromSuperview()
         }
     }
 
