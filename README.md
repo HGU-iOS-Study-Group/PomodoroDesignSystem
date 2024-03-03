@@ -50,6 +50,9 @@ Pomodoro Popup은 타이틀 텍스트, 바디 텍스트, 버튼의 조합입니�
 
 #### 타이틀 텍스트 + 바디 텍스트 + 버튼 2개 
 
+<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/8a1c6498-fe68-4ee4-8648-e5456078cdb1" width=300 /img>
+
+
 ```swift
 import PomodoroDesignSystem
 PomodoroPopupBuilder()
@@ -70,6 +73,9 @@ PomodoroPopupBuilder()
 👉🏻 `add(button:)` 의 `cancellable` 타입을 선택해 버튼 두 개가 제공되는 팝업을 만들 수 있습니다. Action 파라미터에는 버튼이 탭 되었을 때 수행할 동작을 지정합니다. <br>
 
 #### 타이틀 텍스트 + 바디 텍스트 + 버튼 1개 
+
+<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/b4d533e8-1667-4d45-8335-ce81d8e75374" width=300 /img>
+
 
 ```swift
 import PomodoroDesignSystem
@@ -123,3 +129,20 @@ PomodoroPopupBuilder()
 ```
 
 👉🏻 내용 영역이 필요하지 않은 팝업은 `add(body:)` 메서드를 사용하지 않으면 됩니다. <br>
+
+
+#### 버튼이 없는 경우
+
+```swift
+import PomodoroDesignSystem
+PomodoroPopupBuilder()
+    .add(title: "제목")
+    .add(body: "내용")
+    .show(on: self)
+```
+
+<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/d2de473a-8363-4ed9-9d9d-c5b30421ebfa" width=300 /img>
+
+
+
+👉🏻 버튼 영역이 필요하지 않은 팝업은 `add(button:)` 메서드를 사용하지 않거나 noButton 타입을 지정하면 됩니다. <br>
