@@ -24,12 +24,12 @@ public enum PomodoroPopupButtonType {
 final class PomodoroPopupView: UIStackView {
     private let titleLabel = UILabel()
     private let bodyLabel = UILabel()
-    private let leftButton = UIButton()
-    private let rightButton = UIButton()
+    private let cancelButton = UIButton()
+    private let confirmButton = UIButton()
     private let buttonsStackView = UIStackView()
 
-    private var leftButtonAction: (() -> Void)?
-    private var rightButtonAction: (() -> Void)?
+    private var cancelButtonAction: (() -> Void)?
+    private var confirmButtonAction: (() -> Void)?
     private var dismissAction: (() -> Void)?
 
     override init(frame: CGRect) {
@@ -52,29 +52,34 @@ final class PomodoroPopupView: UIStackView {
         self.dismissAction = dismissAction
         switch button {
         case .confirm(let title, let action):
-            leftButton.setTitle(title, for: .normal)
-            leftButtonAction = action
-            rightButton.removeFromSuperview()
-        case .cancellable(let cancelButtonTitle, let confirmButtonTitle, let cancelButtonAction, let confirmButtonAction):
-            leftButton.setTitle(cancelButtonTitle, for: .normal)
-            rightButton.setTitle(confirmButtonTitle, for: .normal)
-            leftButtonAction = cancelButtonAction
-            rightButtonAction = confirmButtonAction
+            confirmButton.setTitle(title, for: .normal)
+            confirmButtonAction = action
+            cancelButton.removeFromSuperview()
+        case .cancellable(
+            let cancelButtonTitle,
+            let confirmButtonTitle,
+            let cancelButtonAction,
+            let confirmButtonAction
+        ):
+            cancelButton.setTitle(cancelButtonTitle, for: .normal)
+            confirmButton.setTitle(confirmButtonTitle, for: .normal)
+            self.cancelButtonAction = cancelButtonAction
+            self.confirmButtonAction = confirmButtonAction
         case nil:
             buttonsStackView.removeFromSuperview()
         }
     }
 
     @objc private func didTapLeftButton() {
-        if let leftButtonAction {
-            leftButtonAction()
+        if let cancelButtonAction {
+            cancelButtonAction()
         }
         dismissAction?()
     }
 
     @objc private func didTapRightButton() {
-        if let rightButtonAction {
-            rightButtonAction()
+        if let confirmButtonAction {
+            confirmButtonAction()
         }
         dismissAction?()
     }
@@ -101,22 +106,22 @@ final class PomodoroPopupView: UIStackView {
         addArrangedSubview(titleLabel)
         addArrangedSubview(bodyLabel)
         addArrangedSubview(buttonsStackView)
-        buttonsStackView.addArrangedSubview(leftButton)
-        buttonsStackView.addArrangedSubview(rightButton)
+        buttonsStackView.addArrangedSubview(cancelButton)
+        buttonsStackView.addArrangedSubview(confirmButton)
     }
 
     private func setupButtons() {
-        leftButton.layer.cornerRadius = 12.8
-        leftButton.titleLabel?.font = .systemFont(ofSize: 20)
-        leftButton.backgroundColor = .pomodoro.disabled2
-        leftButton.setTitleColor(.pomodoro.surface, for: .normal)
-        leftButton.addTarget(self, action: #selector(didTapLeftButton), for: .touchUpInside)
+        cancelButton.layer.cornerRadius = 12.8
+        cancelButton.titleLabel?.font = .systemFont(ofSize: 20)
+        cancelButton.backgroundColor = .pomodoro.disabled2
+        cancelButton.setTitleColor(.pomodoro.surface, for: .normal)
+        cancelButton.addTarget(self, action: #selector(didTapLeftButton), for: .touchUpInside)
 
-        rightButton.layer.cornerRadius = 12.8
-        rightButton.titleLabel?.font = .systemFont(ofSize: 20)
-        rightButton.backgroundColor = .pomodoro.primary900
-        rightButton.setTitleColor(.pomodoro.surface, for: .normal)
-        rightButton.addTarget(self, action: #selector(didTapRightButton), for: .touchUpInside)
+        confirmButton.layer.cornerRadius = 12.8
+        confirmButton.titleLabel?.font = .systemFont(ofSize: 20)
+        confirmButton.backgroundColor = .pomodoro.primary900
+        confirmButton.setTitleColor(.pomodoro.surface, for: .normal)
+        confirmButton.addTarget(self, action: #selector(didTapRightButton), for: .touchUpInside)
 
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
         buttonsStackView.spacing = 7
