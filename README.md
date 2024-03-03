@@ -16,6 +16,7 @@ private lazy var tagButton = PomodoroConfirmButton(title: "test", didTapHandler:
 👉🏻 버튼의 위치를 지정해두지 않았기 때문에, auto layout으로 버튼의 위치를 지정해주세요. <br>
 👉🏻 버튼의 enable을 컨트롤하고 싶다면, 위 예시와 같이 사용할 수 있습니다 !
 
+
 <img width="256" alt="스크린샷 2024-02-28 오후 4 37 59" src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/97924765/d99ba69f-8bb6-4c63-a72e-e56f4402ca4b">
 
 
@@ -50,7 +51,7 @@ Pomodoro Popup은 타이틀 텍스트, 바디 텍스트, 버튼의 조합입니�
 
 #### 타이틀 텍스트 + 바디 텍스트 + 버튼 2개 
 
-<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/8a1c6498-fe68-4ee4-8648-e5456078cdb1" width=300 /img>
+<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/8a1c6498-fe68-4ee4-8648-e5456078cdb1" width=300 >
 
 
 ```swift
@@ -74,7 +75,7 @@ PomodoroPopupBuilder()
 
 #### 타이틀 텍스트 + 바디 텍스트 + 버튼 1개 
 
-<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/b4d533e8-1667-4d45-8335-ce81d8e75374" width=300 /img>
+<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/b4d533e8-1667-4d45-8335-ce81d8e75374" width=300 >
 
 
 ```swift
@@ -132,6 +133,7 @@ PomodoroPopupBuilder()
 
 
 #### 버튼이 없는 경우
+<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/d2de473a-8363-4ed9-9d9d-c5b30421ebfa" width=300 >
 
 ```swift
 import PomodoroDesignSystem
@@ -140,9 +142,5 @@ PomodoroPopupBuilder()
     .add(body: "내용")
     .show(on: self)
 ```
-
-<img src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/46087477/d2de473a-8363-4ed9-9d9d-c5b30421ebfa" width=300 /img>
-
-
 
 👉🏻 버튼 영역이 필요하지 않은 팝업은 `add(button:)` 메서드를 사용하지 않거나 noButton 타입을 지정하면 됩니다. <br>
