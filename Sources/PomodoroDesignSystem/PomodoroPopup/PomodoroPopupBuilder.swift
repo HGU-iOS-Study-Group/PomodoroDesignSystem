@@ -12,6 +12,8 @@ public final class PomodoroPopupBuilder {
     private var body: String?
     private var buttonType: PomodoroPopupButtonType?
 
+    public init() {}
+
     public func add(title: String) -> Self {
         self.title = title
         return self
