@@ -32,3 +32,94 @@ view.backgroundColor = .pomodoro.background
 👉🏻 위 예시처럼 .pomodoro를 사용해 해당 디자인 시스템 속성에 접근하여 사용해주세요. <br>
 
 <img width="256" alt="스크린샷 2024-02-28 오후 4 41 28" src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/97924765/825e4730-736e-4eec-afea-90e44ca8cc75">
+
+
+<br>
+
+
+## Pomodoro Popup 사용하기
+
+Pomodoro 프로젝트에서는 Alert, Popup 에 모두 Pomodoro Popup 만을 사용합니다.
+`PomodoroPopupBuilder`를 사용해 팝업에 필요한 컴포넌트들을 추가하고 `show(on:)` 메서드를 이용해 팝업을 노출합니다.
+
+dimmed 영역을 탭하면 팝업은 사라지고, 취소 및 확인 버튼에도 팝업을 사라지게 하는 코드가 내장되어있으므로 handler에는 버튼 탭에 대한 동작만 지정해줍니다.
+
+### 사용법
+
+Pomodoro Popup은 타이틀 텍스트, 바디 텍스트, 버튼의 조합입니다.  
+
+#### 타이틀 텍스트 + 바디 텍스트 + 버튼 2개 
+
+```swift
+import PomodoroDesignSystem
+PomodoroPopupBuilder()
+    .add(title: "제목")
+    .add(body: "내용")
+    .add(
+        button: .cancellable(
+            cancelButtonTitle: "취소",
+            confirmButtonTitle: "확인",
+            cancelButtonAction: { /* 취소 동작 */ },
+            confirmButtonAction: { /* 확인 동작 */ }
+        )
+    )
+    .show(on: self)
+```
+
+👉🏻 `add(title:)`, `add(body:)` 메서드를 통해 제목과 바디를 추가합니다. <br>
+👉🏻 `add(button:)` 의 `cancellable` 타입을 선택해 버튼 두 개가 제공되는 팝업을 만들 수 있습니다. Action 파라미터에는 버튼이 탭 되었을 때 수행할 동작을 지정합니다. <br>
+
+#### 타이틀 텍스트 + 바디 텍스트 + 버튼 1개 
+
+```swift
+import PomodoroDesignSystem
+PomodoroPopupBuilder()
+    .add(title: "제목")
+    .add(body: "내용")
+    .add(
+        button: .confirm(
+            title: "확인",
+            action: { /* 확인 동작 */ }
+        )
+    )
+    .show(on: self)
+```
+
+👉🏻 `add(title:)`, `add(body:)` 메서드를 통해 제목과 바디를 추가합니다. <br>
+👉🏻 `add(button:)` 의 `confirm` 타입을 선택해 버튼 한 개가 제공되는 팝업을 만들 수 있습니다. Action 파라미터에는 버튼이 탭 되었을 때 수행할 동작을 지정합니다. <br>
+
+
+#### 바디 텍스트 + 버튼 
+
+```swift
+import PomodoroDesignSystem
+PomodoroPopupBuilder()
+    .add(body: "내용")
+    .add(
+        button: .confirm(
+            title: "확인",
+            action: { /* 확인 동작 */ }
+        )
+    )
+    .show(on: self)
+```
+
+👉🏻 제목 영역이 필요하지 않은 팝업은 `add(title:)` 메서드를 사용하지 않으면 됩니다. <br>
+
+
+#### 타이틀 텍스트 + 버튼 
+
+```swift
+import PomodoroDesignSystem
+PomodoroPopupBuilder()
+    .add(title: "제목")
+    .add(
+        button: .confirm(
+            title: "확인",
+            action: { /* 확인 동작 */ }
+        )
+    )
+    .show(on: self)
+```
+
+👉🏻 내용 영역이 필요하지 않은 팝업은 `add(body:)` 메서드를 사용하지 않으면 됩니다. <br>
