@@ -24,43 +24,43 @@ public extension UIFont {
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func heading3(size fontSize: CGFloat = 28) -> UIFont {
+        public func heading3(size fontSize: CGFloat = 28) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func heading4(size fontSize: CGFloat = 20) -> UIFont {
+        public func heading4(size fontSize: CGFloat = 20) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func heading5(size fontSize: CGFloat = 18) -> UIFont {
+        public func heading5(size fontSize: CGFloat = 18) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func heading6(size fontSize: CGFloat = 16) -> UIFont {
+        public func heading6(size fontSize: CGFloat = 16) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
         // paragraph and quote
-        static func text1(size fontSize: CGFloat = 20) -> UIFont {
+        public func text1(size fontSize: CGFloat = 20) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func text2(size fontSize: CGFloat = 18) -> UIFont {
+        public func text2(size fontSize: CGFloat = 18) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func text3(size fontSize: CGFloat = 18) -> UIFont {
+        public func text3(size fontSize: CGFloat = 18) -> UIFont {
             let familyName = "Pretendard"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func text4(size fontSize: CGFloat = 16) -> UIFont {
+        public func text4(size fontSize: CGFloat = 16) -> UIFont {
             let familyName = "Pretendard"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
