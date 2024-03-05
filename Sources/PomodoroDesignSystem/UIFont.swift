@@ -14,12 +14,12 @@ public extension UIFont {
         override init() { super.init() }
         
         // heading
-        static func heading1(size fontSize: CGFloat = 80) -> UIFont {
+        public func heading1(size fontSize: CGFloat = 80) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
 
-        static func heading2(size fontSize: CGFloat = 54) -> UIFont {
+        public func heading2(size fontSize: CGFloat = 54) -> UIFont {
             let familyName = "BMHANNA11yrsoldOTF"
             return UIFont(name: "\(familyName)", size: fontSize) ?? .systemFont(ofSize: fontSize)
         }
