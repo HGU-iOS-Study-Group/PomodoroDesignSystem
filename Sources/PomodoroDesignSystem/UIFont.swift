@@ -8,9 +8,9 @@
 import UIKit
 
 public extension UIFont {
-    static let pomodoro = Pomodoro()
+    static let pomodoroFont = PomodoroFont()
     
-    final class Pomodoro: NSObject {
+    final class PomodoroFont: NSObject {
         override init() { super.init() }
         
         // heading
