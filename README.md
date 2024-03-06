@@ -144,3 +144,19 @@ PomodoroPopupBuilder()
 ```
 
 👉🏻 버튼 영역이 필요하지 않은 팝업은 `add(button:)` 메서드를 사용하지 않거나 noButton 타입을 지정하면 됩니다. <br>
+
+<br>
+
+## PomodoroFont 사용하기
+```swift
+import PomodoroDesignSystem
+tagLabel.text = UIFont.pomodoroFont.heading1()
+```
+
+👉🏻 위 코드 예시처럼 import 한 뒤 pomodoroFont를 사용해주세요. <br>
+👉🏻 위 코드처럼 pomodoroFont에 접근하여 사용하시면 됩니다 !!
+
+
+<img width="256" alt="스크린샷 2024-02-28 오후 4 37 59" src="https://github.com/HGU-iOS-Study-Group/PomodoroDesignSystem/assets/97924765/d2c0d25e-6b1f-4397-ad57-df36f6d6675d">
+
+
