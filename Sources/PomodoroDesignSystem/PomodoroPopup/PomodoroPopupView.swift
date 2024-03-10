@@ -106,16 +106,18 @@ final class PomodoroPopupView: UIStackView {
         addGestureRecognizer(UITapGestureRecognizer())
         backgroundColor = .pomodoro.background
         isLayoutMarginsRelativeArrangement = true
-        directionalLayoutMargins = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+        directionalLayoutMargins = .init(top: 28, leading: 20, bottom: 24, trailing: 20)
         alignment = .center
         layer.cornerRadius = 24
-        spacing = 30
+        spacing = 20
         axis = .vertical
     }
 
     private func setupSubviews() {
         addArrangedSubview(titleLabel)
         addArrangedSubview(bodyLabel)
+        let extraSpacingView = UIView(frame: .init(x: 0, y: 0, width: 0, height: 4))
+        addArrangedSubview(extraSpacingView)
         addArrangedSubview(buttonsStackView)
         buttonsStackView.addArrangedSubview(cancelButton)
         buttonsStackView.addArrangedSubview(confirmButton)
@@ -123,13 +125,13 @@ final class PomodoroPopupView: UIStackView {
 
     private func setupButtons() {
         cancelButton.layer.cornerRadius = 12.8
-        cancelButton.titleLabel?.font = .systemFont(ofSize: 20)
+        cancelButton.titleLabel?.font = .pomodoroFont.heading4()
         cancelButton.backgroundColor = .pomodoro.disabled2
         cancelButton.setTitleColor(.pomodoro.surface, for: .normal)
         cancelButton.addTarget(self, action: #selector(didTapLeftButton), for: .touchUpInside)
 
         confirmButton.layer.cornerRadius = 12.8
-        confirmButton.titleLabel?.font = .systemFont(ofSize: 20)
+        confirmButton.titleLabel?.font = .pomodoroFont.heading4()
         confirmButton.backgroundColor = .pomodoro.primary900
         confirmButton.setTitleColor(.pomodoro.surface, for: .normal)
         confirmButton.addTarget(self, action: #selector(didTapRightButton), for: .touchUpInside)
@@ -145,7 +147,13 @@ final class PomodoroPopupView: UIStackView {
     private func setupLabels() {
         titleLabel.numberOfLines = .zero
         bodyLabel.numberOfLines = .zero
-        titleLabel.font = .systemFont(ofSize: 20)
-        bodyLabel.font = .systemFont(ofSize: 18)
+        titleLabel.font = .pomodoroFont.heading4()
+        bodyLabel.font = .pomodoroFont.text3()
+
+        titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 40).isActive = true
+
+        bodyLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40).isActive = true
+        bodyLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 40).isActive = true
     }
 }
