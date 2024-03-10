@@ -116,8 +116,6 @@ final class PomodoroPopupView: UIStackView {
     private func setupSubviews() {
         addArrangedSubview(titleLabel)
         addArrangedSubview(bodyLabel)
-        let extraSpacingView = UIView(frame: .init(x: 0, y: 0, width: 0, height: 4))
-        addArrangedSubview(extraSpacingView)
         addArrangedSubview(buttonsStackView)
         buttonsStackView.addArrangedSubview(cancelButton)
         buttonsStackView.addArrangedSubview(confirmButton)
@@ -129,16 +127,18 @@ final class PomodoroPopupView: UIStackView {
         cancelButton.backgroundColor = .pomodoro.disabled2
         cancelButton.setTitleColor(.pomodoro.surface, for: .normal)
         cancelButton.addTarget(self, action: #selector(didTapLeftButton), for: .touchUpInside)
+        cancelButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
 
         confirmButton.layer.cornerRadius = 12.8
         confirmButton.titleLabel?.font = .pomodoroFont.heading4()
         confirmButton.backgroundColor = .pomodoro.primary900
         confirmButton.setTitleColor(.pomodoro.surface, for: .normal)
         confirmButton.addTarget(self, action: #selector(didTapRightButton), for: .touchUpInside)
+        confirmButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
 
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
-        buttonsStackView.spacing = 7
-        buttonsStackView.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        buttonsStackView.spacing = 8
+        buttonsStackView.heightAnchor.constraint(equalToConstant: 52).isActive = true
         buttonsStackView.distribution = .fillEqually
         buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
@@ -157,6 +157,6 @@ final class PomodoroPopupView: UIStackView {
         titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60).isActive = true
 
         bodyLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60).isActive = true
-        bodyLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40).isActive = true
+        bodyLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60).isActive = true
     }
 }
