@@ -146,14 +146,17 @@ final class PomodoroPopupView: UIStackView {
 
     private func setupLabels() {
         titleLabel.numberOfLines = .zero
-        bodyLabel.numberOfLines = .zero
         titleLabel.font = .pomodoroFont.heading4()
+        titleLabel.textAlignment = .center
+
+        bodyLabel.numberOfLines = .zero
         bodyLabel.font = .pomodoroFont.text3()
+        bodyLabel.textAlignment = .center
 
-        titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 40).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60).isActive = true
 
-        bodyLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40).isActive = true
-        bodyLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 40).isActive = true
+        bodyLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60).isActive = true
+        bodyLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40).isActive = true
     }
 }
