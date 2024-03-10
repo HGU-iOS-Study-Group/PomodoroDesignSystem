@@ -106,10 +106,10 @@ final class PomodoroPopupView: UIStackView {
         addGestureRecognizer(UITapGestureRecognizer())
         backgroundColor = .pomodoro.background
         isLayoutMarginsRelativeArrangement = true
-        directionalLayoutMargins = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+        directionalLayoutMargins = .init(top: 28, leading: 20, bottom: 24, trailing: 20)
         alignment = .center
         layer.cornerRadius = 24
-        spacing = 30
+        spacing = 20
         axis = .vertical
     }
 
@@ -123,20 +123,22 @@ final class PomodoroPopupView: UIStackView {
 
     private func setupButtons() {
         cancelButton.layer.cornerRadius = 12.8
-        cancelButton.titleLabel?.font = .systemFont(ofSize: 20)
+        cancelButton.titleLabel?.font = .pomodoroFont.heading4()
         cancelButton.backgroundColor = .pomodoro.disabled2
         cancelButton.setTitleColor(.pomodoro.surface, for: .normal)
         cancelButton.addTarget(self, action: #selector(didTapLeftButton), for: .touchUpInside)
+        cancelButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
 
         confirmButton.layer.cornerRadius = 12.8
-        confirmButton.titleLabel?.font = .systemFont(ofSize: 20)
+        confirmButton.titleLabel?.font = .pomodoroFont.heading4()
         confirmButton.backgroundColor = .pomodoro.primary900
         confirmButton.setTitleColor(.pomodoro.surface, for: .normal)
         confirmButton.addTarget(self, action: #selector(didTapRightButton), for: .touchUpInside)
+        confirmButton.heightAnchor.constraint(equalToConstant: 48).isActive = true
 
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
-        buttonsStackView.spacing = 7
-        buttonsStackView.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        buttonsStackView.spacing = 8
+        buttonsStackView.heightAnchor.constraint(equalToConstant: 52).isActive = true
         buttonsStackView.distribution = .fillEqually
         buttonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         buttonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
@@ -144,8 +146,17 @@ final class PomodoroPopupView: UIStackView {
 
     private func setupLabels() {
         titleLabel.numberOfLines = .zero
+        titleLabel.font = .pomodoroFont.heading4()
+        titleLabel.textAlignment = .center
+
         bodyLabel.numberOfLines = .zero
-        titleLabel.font = .systemFont(ofSize: 20)
-        bodyLabel.font = .systemFont(ofSize: 18)
+        bodyLabel.font = .pomodoroFont.text3()
+        bodyLabel.textAlignment = .center
+
+        titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60).isActive = true
+
+        bodyLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60).isActive = true
+        bodyLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60).isActive = true
     }
 }
