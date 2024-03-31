@@ -44,6 +44,7 @@ public final class PomodoroConfirmButton: UIView {
         button.setTitleColor(.pomodoro.surface.withAlphaComponent(0.2), for: .disabled)
         button.backgroundColor = .pomodoro.blackHigh
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = .pomodoroFont.heading3()
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalTo: self.topAnchor),
             button.bottomAnchor.constraint(equalTo: self.bottomAnchor),
